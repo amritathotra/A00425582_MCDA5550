@@ -1,8 +1,11 @@
 package com.example.amrit.myapplication2;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,11 +13,28 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
+
+    InClassDatabaseHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Button cal=(Button) findViewById(R.id.buttonCal);
+
+        helper = new InClassDatabaseHelper(this);
+
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+        // run a query
+        Cursor cursor = db.query(InClassDatabaseHelper.TABLE_NAME2,new String[]
+                        {"HEIGHT"},
+                null,null,null,null,null); //
+        while (cursor.moveToNext()){
+            Double height = cursor.getDouble(0);
+            Log.d("Height", height.toString());
+        }
+        cursor.close(); // cleanup
+        db.close(); // cleanup
         cal.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -36,12 +56,14 @@ public class Main2Activity extends AppCompatActivity {
         EditText weight = (EditText) findViewById(R.id.textWeight);
         String wvalue = height.getText().toString();
         Double weightVal = Double.parseDouble(wvalue);
-        System.out.println("here is the height "+weightVal);
+        System.out.println("here is the Weight "+weightVal);
 
         Double calc = (weightVal/(heightVal*heightVal));
         EditText result = (EditText) findViewById(R.id.result);
 
         result.setText(Double.toString(calc));
+
+        helper.createBmiData(heightVal,weightVal,calc);
     }
 
     /*public void onClickEnter(View view){

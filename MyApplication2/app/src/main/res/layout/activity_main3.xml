@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
-
+    tools:context=".Main3Activity">
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="97dp"
-                android:layout_height="46dp"
-                android:text="Enter Height" />
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name" />
 
             <EditText
-                android:id="@+id/textHeight"
+                android:id="@+id/editTextName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number|numberDecimal" />
+                android:inputType="textPersonName"
+                android:text="Name" />
         </TableRow>
 
         <TableRow
@@ -33,17 +33,54 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:text="Weight" />
+                android:layout_height="wrap_content"
+                android:text="Date of Birth" />
 
             <EditText
-                android:id="@+id/textWeight"
+                android:id="@+id/editTextDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:inputType="date" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Health Card Number" />
+
+            <EditText
+                android:id="@+id/editTextCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
         </TableRow>
 
         <TableRow
@@ -51,29 +88,12 @@
             android:layout_height="match_parent" >
 
             <Button
-                android:id="@+id/buttonCal"
+                android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onClickEnter"
-                android:text="Calculate" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Results" />
-
-            <EditText
-                android:id="@+id/result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:text="Button" />
         </TableRow>
     </TableLayout>
+
 </android.support.constraint.ConstraintLayout>
