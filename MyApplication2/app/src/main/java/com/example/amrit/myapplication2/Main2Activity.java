@@ -54,7 +54,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //repeat for weight
         EditText weight = (EditText) findViewById(R.id.textWeight);
-        String wvalue = height.getText().toString();
+        String wvalue = weight.getText().toString();
         Double weightVal = Double.parseDouble(wvalue);
         System.out.println("here is the Weight "+weightVal);
 
